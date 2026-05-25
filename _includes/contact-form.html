@@ -1,0 +1,102 @@
+<!-- Contact Form Section -->
+<section id="contact" style="padding: 60px 10%; background: #f8f9fa; text-align: center; border-top: 3px solid #002D62; margin: 50px 0 0 0;">
+    <h2 style="color: #002D62; text-transform: uppercase; font-size: 2.5rem; margin-bottom: 25px;">Get Your Free Quote Today</h2>
+
+    <p style="font-size: 1.3rem; max-width: 800px; margin: 0 auto 40px; color: #444; line-height: 1.6;">
+        After seeing our before & after results, let us give you a fast, no-obligation quote for your property in {{ page.title }} {{ page.postcode }}.
+        Fill in the details below – Ian Smith will get back to you quickly.
+    </p>
+
+    <form id="quote-form" method="POST" action="/send.php" style="max-width: 720px; margin: 0 auto; background: white; padding: 35px; border-radius: 12px; box-shadow: 0 6px 25px rgba(0,0,0,0.12);">
+        <input type="text" name="_honeypot" style="display:none;" />
+        <input type="hidden" name="location" value="{{ page.title }} {{ page.postcode }}" />
+        <input type="hidden" name="service" value="{{ page.service }}" />
+
+        <!-- Name Fields -->
+        <div style="display: flex; flex-wrap: wrap; gap: 25px; margin-bottom: 25px;">
+            <div style="flex: 1 1 45%; min-width: 280px;">
+                <label for="first-name" style="display: block; margin-bottom: 8px; font-weight: bold; color: #002D62;">First Name <span style="color: red;">*</span></label>
+                <input type="text" id="first-name" name="name" required placeholder="Required" style="width: 100%; padding: 14px; border: 1px solid #ccc; border-radius: 6px; font-size: 1.05rem; box-sizing: border-box;">
+            </div>
+
+            <div style="flex: 1 1 45%; min-width: 280px;">
+                <label for="surname" style="display: block; margin-bottom: 8px; font-weight: bold; color: #002D62;">Surname</label>
+                <input type="text" id="surname" name="surname" placeholder="Optional" style="width: 100%; padding: 14px; border: 1px solid #ccc; border-radius: 6px; font-size: 1.05rem; box-sizing: border-box;">
+            </div>
+        </div>
+
+        <!-- Contact Fields -->
+        <div style="display: flex; flex-wrap: wrap; gap: 25px; margin-bottom: 25px;">
+            <div style="flex: 1 1 45%; min-width: 280px;">
+                <label for="telephone" style="display: block; margin-bottom: 8px; font-weight: bold; color: #002D62;">Telephone <span style="color: red;">*</span></label>
+                <input type="tel" id="telephone" name="phone" required pattern="[0-9\s+()-]+" placeholder="Required" style="width: 100%; padding: 14px; border: 1px solid #ccc; border-radius: 6px; font-size: 1.05rem; box-sizing: border-box;">
+            </div>
+
+            <div style="flex: 1 1 45%; min-width: 280px;">
+                <label for="email" style="display: block; margin-bottom: 8px; font-weight: bold; color: #002D62;">Email</label>
+                <input type="email" id="email" name="email" placeholder="Optional" style="width: 100%; padding: 14px; border: 1px solid #ccc; border-radius: 6px; font-size: 1.05rem; box-sizing: border-box;">
+            </div>
+        </div>
+
+        <!-- Postcode Field -->
+        <div style="margin-bottom: 25px;">
+            <label for="postcode" style="display: block; margin-bottom: 8px; font-weight: bold; color: #002D62;">Postcode (first part is fine, e.g. L8) <span style="color: red;">*</span></label>
+            <input type="text" id="postcode" name="postcode" required placeholder="e.g. L8 or L8 1AB" style="width: 100%; padding: 14px; border: 1px solid #ccc; border-radius: 6px; font-size: 1.05rem; box-sizing: border-box;">
+        </div>
+
+        <!-- Type of Property Clearance - Checkboxes -->
+        <div style="margin-bottom: 25px; text-align: left;">
+            <label style="display: block; margin-bottom: 12px; font-weight: bold; color: #002D62;">Type of Property Clearance <span style="color: red;">*</span></label>
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+                <label style="display: flex; align-items: center; cursor: pointer;">
+                    <input type="checkbox" name="clearance_type[]" value="House/Apartment/Flat/Bungalow" style="margin-right: 10px; width: 18px; height: 18px;">
+                    <span style="font-size: 1.05rem;">House/Apartment/Flat/Bungalow</span>
+                </label>
+                <label style="display: flex; align-items: center; cursor: pointer;">
+                    <input type="checkbox" name="clearance_type[]" value="Attic/Loft" style="margin-right: 10px; width: 18px; height: 18px;">
+                    <span style="font-size: 1.05rem;">Attic/Loft</span>
+                </label>
+                <label style="display: flex; align-items: center; cursor: pointer;">
+                    <input type="checkbox" name="clearance_type[]" value="Garage/Shed" style="margin-right: 10px; width: 18px; height: 18px;">
+                    <span style="font-size: 1.05rem;">Garage/Shed</span>
+                </label>
+                <label style="display: flex; align-items: center; cursor: pointer;">
+                    <input type="checkbox" name="clearance_type[]" value="Garden" style="margin-right: 10px; width: 18px; height: 18px;">
+                    <span style="font-size: 1.05rem;">Garden</span>
+                </label>
+                <label style="display: flex; align-items: center; cursor: pointer;">
+                    <input type="checkbox" name="clearance_type[]" value="Rubbish" style="margin-right: 10px; width: 18px; height: 18px;">
+                    <span style="font-size: 1.05rem;">Rubbish</span>
+                </label>
+                <label style="display: flex; align-items: center; cursor: pointer;">
+                    <input type="checkbox" name="clearance_type[]" value="Other" style="margin-right: 10px; width: 18px; height: 18px;">
+                    <span style="font-size: 1.05rem;">Other</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Comment/Message -->
+        <div style="margin-bottom: 25px;">
+            <label for="message" style="display: block; margin-bottom: 8px; font-weight: bold; color: #002D62;">Comment or Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Optional - Tell us about your clearance needs..." style="width: 100%; padding: 14px; border: 1px solid #ccc; border-radius: 6px; font-size: 1.05rem; resize: vertical; box-sizing: border-box;"></textarea>
+        </div>
+
+        <!-- Privacy Checkbox -->
+        <div style="margin-bottom: 25px; text-align: left;">
+            <label style="display: flex; align-items: flex-start; cursor: pointer;">
+                <input type="checkbox" name="privacy_agreed" required style="margin-right: 10px; margin-top: 4px; width: 18px; height: 18px;">
+                <span style="font-size: 0.95rem; line-height: 1.5; color: #555;">
+                    I agree to the <a href="{{ '/privacy-policy/' | relative_url }}" style="color: #002D62; text-decoration: underline;">Privacy Policy</a> and consent to Smiths Family House Clearances storing and processing my data for the purpose of providing a quote. <span style="color: red;">*</span>
+                </span>
+            </label>
+        </div>
+
+        <button type="submit" style="width: 100%; padding: 18px; background: #002D62; color: white; border: none; border-radius: 8px; font-size: 1.3rem; font-weight: bold; cursor: pointer; transition: background 0.3s; box-shadow: 0 4px 12px rgba(0,45,98,0.3);">
+            Get My Free Quote →
+        </button>
+
+        <p style="font-size: 0.9rem; color: #000000; margin-top: 20px; line-height: 1.5;">
+            Your information is safe with us. We'll only use it to provide your quote and will never share it with third parties.
+        </p>
+    </form>
+</section>

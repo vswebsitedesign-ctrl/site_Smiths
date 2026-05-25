@@ -1,0 +1,36 @@
+baseurl: ''
+defaults:
+- scope:
+    path: services
+    type: pages
+  values:
+    layout: location
+exclude:
+- backups/
+- Gemfile
+- Gemfile.lock
+- .jekyll-cache/
+- fix_service_locations.py
+- fix_images.py
+- generate-sitemap.sh
+- audit/
+- send.php
+- fix_section_cls.py
+- scripts/
+- server_html_reference/
+- services_html_reference/
+- master_report.json
+- Master Report.txt
+- Tasks.txt
+- index.md.bak
+- index.md.bak-20260401-0832
+- '*.bak'
+- '*.bak-*'
+permalink: pretty
+plugins:
+- jekyll-sitemap
+- jekyll-seo-tag
+primary_phone: 07931 476 744
+site_name: Smiths
+title: Smith Family House & Garage Clearances | East Midlands
+url: https://smithfamilyhouseandgarageclearances.co.uk

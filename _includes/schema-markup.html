@@ -1,0 +1,86 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "The Smiths Family House and Garage Clearances",
+  "image": "{{ '/images/Smith-Family-House-Garage-Clearance.webp' | absolute_url }}",
+  "@id": "{{ page.url | absolute_url }}",
+  "url": "{{ site.url }}",
+  "telephone": "07425236281",
+  "priceRange": "££",
+  "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "East Midlands",
+    "addressCountry": "GB"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 52.9548,
+    "longitude": -1.1581
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ],
+    "opens": "07:00",
+    "closes": "19:00"
+  },
+  "sameAs": [
+    "https://wa.me/447425236281"
+  ],
+  "description": "{% if page.description %}{{ page.description }}{% else %}Professional house clearance services across Nottinghamshire, Derbyshire, and Leicestershire. Fully licensed waste carrier.{% endif %}",
+  {% if page.service %}
+  "areaServed": {
+    "@type": "City",
+    "name": "{{ page.title }}{% if page.postcode %}, {{ page.postcode }}{% endif %}"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "House Clearance Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "{{ page.service }}",
+          "description": "{{ page.service }} in {{ page.title }} {{ page.postcode }}"
+        }
+      }
+    ]
+  },
+  {% endif %}
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "3"
+  },
+  "founder": {
+    "@type": "Person",
+    "name": "Ian Smith"
+  },
+  "slogan": "Professional, reliable, and stress-free property clearance",
+  "knowsAbout": [
+    "House Clearance",
+    "Probate Clearance",
+    "Bereavement Clearance",
+    "Residential Clearance",
+    "Commercial Clearance",
+    "Hoarder Clearance",
+    "Garden Clearance",
+    "Garage Clearance",
+    "Attic Clearance",
+    "Waste Removal"
+  ],
+  "memberOf": {
+    "@type": "Organization",
+    "name": "Environment Agency",
+    "description": "Registered Waste Carrier"
+  }
+}
+</script>
